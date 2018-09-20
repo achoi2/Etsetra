@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter, Route, NavLink, Switch } from 'react-router-dom';
-
+import AllProductScreen from './AllProductsScreen';
 
 let SideBar = () => {
     return <nav>
@@ -13,7 +13,7 @@ let SideBar = () => {
 }
 
 const Home = () => {
-    return <h1>Etsetra</h1>
+    return <AllProductScreen/>;
 };
 
 const All = () => {
