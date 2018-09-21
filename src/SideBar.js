@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const CategoriesList = (props) => {
-    let newArray = props.categories.map(category => {
-        return category.title
-    });
-    return <div>{newArray}</div>;
+    return <div>
+            {props.categories.map(category => {
+                return <NavLink to={`/category/${category.id}`} key={category.id}>
+                {category.title}
+                </NavLink>
+            })}
+        </div>;
 };
 
 let SideBar = connect(state => ({ categories: state.categories }))(CategoriesList); 
